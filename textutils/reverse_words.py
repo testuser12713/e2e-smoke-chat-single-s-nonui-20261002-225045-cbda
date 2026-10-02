@@ -9,4 +9,4 @@ def reverse_words(text: str) -> str:
     Mehrfacher oder führender/abschließender Whitespace wird zu einzelnen
     Leerzeichen normalisiert.
     """
-    raise NotImplementedError
+    return " ".join(reversed(text.split()))
