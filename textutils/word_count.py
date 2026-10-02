@@ -8,4 +8,4 @@ def word_count(text: str) -> int:
 
     Leerer Text oder reiner Whitespace ergibt 0.
     """
-    raise NotImplementedError
+    return len(text.split())
