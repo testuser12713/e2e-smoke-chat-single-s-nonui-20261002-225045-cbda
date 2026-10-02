@@ -9,4 +9,5 @@ def is_palindrome(text: str) -> bool:
     Der Vergleich ignoriert Groß-/Kleinschreibung sowie alle nicht-
     alphanumerischen Zeichen. Leerer Text gilt als Palindrom.
     """
-    raise NotImplementedError
+    normalized = [char.lower() for char in text if char.isalnum()]
+    return normalized == normalized[::-1]
