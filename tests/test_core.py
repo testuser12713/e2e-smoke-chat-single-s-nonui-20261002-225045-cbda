@@ -13,6 +13,7 @@ import importlib
 def test_public_api_importable() -> None:
     from textutils import (
         is_palindrome,
+        normalize_whitespace,
         reverse_words,
         slugify,
         truncate,
@@ -24,9 +25,10 @@ def test_public_api_importable() -> None:
     assert callable(word_count)
     assert callable(is_palindrome)
     assert callable(reverse_words)
+    assert callable(normalize_whitespace)
 
 
-def test_all_contains_exactly_the_five_names_in_order() -> None:
+def test_all_contains_exactly_the_six_names_in_order() -> None:
     import textutils
 
     assert textutils.__all__ == [
@@ -35,6 +37,7 @@ def test_all_contains_exactly_the_five_names_in_order() -> None:
         "word_count",
         "is_palindrome",
         "reverse_words",
+        "normalize_whitespace",
     ]
 
 
@@ -51,5 +54,6 @@ def test_each_module_importable() -> None:
         "textutils.word_count",
         "textutils.palindrome",
         "textutils.reverse_words",
+        "textutils.normalize_whitespace",
     ):
         assert importlib.import_module(module_name) is not None
