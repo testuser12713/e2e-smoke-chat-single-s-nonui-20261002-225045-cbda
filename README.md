@@ -1,9 +1,9 @@
 # textutils
 
 `textutils` ist eine eigenständige, installierbare Python-Bibliothek ohne UI. Sie
-bündelt fünf kleine, voneinander unabhängige String-Hilfsfunktionen
-(`slugify`, `truncate`, `word_count`, `is_palindrome`, `reverse_words`) in einem
-Paket. Es gibt keine CLI, keine Services und keine Zusatzfeatures.
+bündelt sechs kleine, voneinander unabhängige String-Hilfsfunktionen
+(`slugify`, `truncate`, `word_count`, `is_palindrome`, `reverse_words`,
+`normalize_whitespace`) in einem Paket. Es gibt keine CLI und keine Services.
 
 ## Tech-Stack
 
@@ -26,7 +26,14 @@ pytest
 ## Verwendung
 
 ```python
-from textutils import slugify, truncate, word_count, is_palindrome, reverse_words
+from textutils import (
+    is_palindrome,
+    normalize_whitespace,
+    reverse_words,
+    slugify,
+    truncate,
+    word_count,
+)
 ```
 
 Die Bibliothek benötigt keine Konfiguration und keine Umgebungsvariablen.
@@ -38,3 +45,4 @@ Die Bibliothek benötigt keine Konfiguration und keine Umgebungsvariablen.
 - `word_count(text: str) -> int` — Anzahl der Wörter.
 - `is_palindrome(text: str) -> bool` — Palindrom-Prüfung über alphanumerischen Vergleich.
 - `reverse_words(text: str) -> str` — Umkehr der Wortreihenfolge.
+- `normalize_whitespace(text: str) -> str` — Vereinheitlichung des Whitespace zu einzelnen Leerzeichen.
