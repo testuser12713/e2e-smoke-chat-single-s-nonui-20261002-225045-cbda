@@ -5,4 +5,4 @@ from __future__ import annotations
 
 def normalize_whitespace(text: str) -> str:
     """Normalisiert den Whitespace in *text* zu einzelnen Leerzeichen."""
-    raise NotImplementedError
+    return " ".join(text.split())
